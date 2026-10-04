@@ -2,6 +2,8 @@
 
 ![tests](https://github.com/kmaan0786akwork-collab/rentslot/actions/workflows/tests.yml/badge.svg)
 
+**Live demo:** https://rentslot.onrender.com · [API docs](https://rentslot.onrender.com/docs) (free tier, first load can take ~30s)
+
 A booking backend for medical equipment rentals (oxygen concentrators, CPAP/BiPAP, patient monitors, hospital beds) that **never double-books a unit**. You give it a date range and it tells you if anything is free. If nothing is, it **suggests the next free slots** across every unit in stock.
 
 I built it after doing freelance work on a medical equipment rental website ([Kinvara Health](https://kmaan0786akwork-collab.github.io/Kinvara-health/)). That site shows products, but a real rental business has to answer *"is it free from the 12th to the 20th?"*, and that's an interval problem.
