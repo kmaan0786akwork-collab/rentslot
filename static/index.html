@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RentSlot – Equipment Rental Availability</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>RentSlot</h1>
+    <p>Medical equipment rentals: live availability, no double-bookings.</p>
+    <a class="api-link" href="/docs" target="_blank">API docs →</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2>1. Pick equipment</h2>
+    <div id="equipment" class="grid"></div>
+  </section>
+
+  <section class="card">
+    <h2>2. Choose dates</h2>
+    <form id="check-form" class="row">
+      <label>Pickup <input type="date" id="start" required></label>
+      <label>Return <input type="date" id="end" required></label>
+      <button type="submit">Check availability</button>
+    </form>
+    <div id="result"></div>
+  </section>
+
+  <section class="card hidden" id="book-card">
+    <h2>3. Book it</h2>
+    <form id="book-form" class="row">
+      <label>Name <input id="name" required minlength="2" placeholder="Customer name"></label>
+      <label>Phone <input id="phone" required pattern="\+?[0-9]{10,13}" placeholder="9876543210"></label>
+      <button type="submit">Confirm booking</button>
+    </form>
+    <div id="book-result"></div>
+  </section>
+
+  <section class="card">
+    <h2>Calendar <small>(next 60 days)</small></h2>
+    <div id="calendar"><p class="muted">Select an item to see when it's fully booked.</p></div>
+    <h3>Bookings</h3>
+    <div id="bookings"></div>
+  </section>
+</main>
+
+<footer class="wrap muted">Built with FastAPI + SQLite · interval overlap, binary search, min-heap, sweep line</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>
